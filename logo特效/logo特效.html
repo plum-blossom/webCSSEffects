@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>logo特效</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<!-- [if lt IE 9]>    //判断当前浏览器的版本是否小于IE 9-->
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<!-- <![endif] -->
+<!-- IE6-8不支持CSS3 Media Queries -->
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/logo.css">
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<header id="header" class="pw1200">
+		<a id="logo-plus" class="logo-link" href="/">
+          <div class="logo logo-plus"> 
+            
+            <img class="logo-base" src="logo (1).png" alt="食儒">
+            <div class="logo-new">
+              <img class="logo-body" src="logo_body.png" alt="食儒">
+              <img class="logo-top" src="logo_top.png" alt="食儒">
+              <img class="logo-bottom" src="logo_bottom.png" alt="食儒">
+            </div>
+            
+          </div>
+        </a>
+        <div id="logo-tip" class="logo-tip">
+          <a href="/">
+            <span class="logo-tip-1">一 食 </span>
+            <span class="logo-tip-2"><span class="logo-tip-split">/</span></span>
+            <span class="logo-tip-3"> 一 味 </span>
+            <span class="logo-tip-4"><span class="logo-tip-split">/</span></span>
+            <span class="logo-tip-5"> 忆 时 光</span>
+          </a>
+        </div>
+	</header><!-- /header -->
+	<!-- 导航栏 -->
+	<div id="nav" class="nav pw1200">
+		<!-- 一级菜单 -->
+		<ul id="top-nav-link" class="nav-link clearfix">
+			<li class="">
+				<a class="nav-link-first txt-overflow settings-nav_border settings-navLinkHover_border this"
+				id="navlink_1489580" href="/">
+					食儒首页
+				</a>
+				<!-- 二级菜单 -->
+			</li>
+			<li class="">
+				<a class="nav-link-first txt-overflow settings-nav_border settings-navLinkHover_border"
+				id="navlink_1489581" href="/pages/recommend">
+					创始人推荐
+				</a>
+				<!-- 二级菜单 -->
+			</li>
+			<li class="">
+				<a class="nav-link-first txt-overflow settings-nav_border settings-navLinkHover_border"
+				id="navlink_1489582" href="/products">
+					所有商品
+					<i class="nav-link-triangle iconfont_sr">
+						&#xf078;
+					</i>
+				</a>
+				<!-- 二级菜单 -->
+				<div class="nav-sublink nav-sublink-prostyle">
+					<i class="nav-sublink-triangle">
+					</i>
+					<ul class="settings-main_border settings-navSub_background" id="navlink_1489582_sub">
+						<li class="settings-navSub_background">
+							<a class="sub-link-a settings-navSubLink_color" id="navlink_1489582_sub_1489583"
+							href="/types/t000003">
+								<i class="icon-p1">
+								</i>
+								礼盒
+							</a>
+							<!-- 三级菜单 -->
+						</li>
+						<li class="settings-navSub_background">
+							<a class="sub-link-a settings-navSubLink_color" id="navlink_1489582_sub_1489584"
+							href="/types/T000004">
+								<i class="icon-p2">
+								</i>
+								卤水
+							</a>
+							<!-- 三级菜单 -->
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="">
+				<a class="nav-link-first txt-overflow settings-nav_border settings-navLinkHover_border"
+				id="navlink_1489585" href="/blogs">
+					食儒专题
+				</a>
+				<!-- 二级菜单 -->
+			</li>
+			<li class="">
+				<a class="nav-link-first txt-overflow settings-nav_border settings-navLinkHover_border"
+				id="navlink_1489586" href="/pages/allstore">
+					门店信息
+				</a>
+				<!-- 二级菜单 -->
+			</li>
+			<li class="">
+				<a class="nav-link-first txt-overflow settings-nav_border settings-navLinkHover_border"
+				id="navlink_1489587" href="/pages/about">
+					关于我们
+					<i class="nav-link-triangle iconfont_sr ">
+						&#xf078;
+					</i>
+				</a>
+				<!-- 二级菜单 -->
+				<div class="nav-sublink ">
+					<i class="nav-sublink-triangle">
+					</i>
+					<ul class="settings-main_border settings-navSub_background" id="navlink_1489587_sub">
+						<li class="settings-navSub_background">
+							<a class="sub-link-a settings-navSubLink_color" id="navlink_1489587_sub_1489588"
+							href="/pages/about#0">
+								品牌故事
+							</a>
+							<!-- 三级菜单 -->
+						</li>
+						<li class="settings-navSub_background">
+							<a class="sub-link-a settings-navSubLink_color" id="navlink_1489587_sub_1489589"
+							href="/posts">
+								媒体报道
+							</a>
+							<!-- 三级菜单 -->
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+		<script>
+			
+			$(".nav-link-first").each(function() {
+				var _href = $(this).attr("href");
+				if (_href == window.location.pathname) {
+					$(this).addClass("this");
+				} else if (window.location.pathname.indexOf("/types/") != -1) {
+					$(".nav-link-first").eq(2).addClass("this");
+				}
+			});
+
+		</script>
+	</div>
+	<div>
+		<!-- <i class="fa fa-chevron-down"></i> -->
+		<!-- &#xf078; -->
+		
+	</div>
+	
+	<script type="text/javascript" src="js/logo.js"></script>
+</body>
+</html>

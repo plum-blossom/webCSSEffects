@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>详情购物车放大镜</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<!-- [if lt IE 9]>    //判断当前浏览器的版本是否小于IE 9-->
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<!-- <![endif] -->
+<!-- IE6-8不支持CSS3 Media Queries -->
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+<style type="text/css" media="screen">
+	.pw1200{
+		width: 1200px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.left_img{
+		width:49.3%;
+		overflow: hidden;
+		vertical-align: top;
+	}
+	.pro_main{
+		height:550px;
+	}
+	.pro_main .pro_img{
+		line-height: 1;
+		width:95%;
+		height:95%;
+		text-align: center;
+		overflow: hidden;
+		margin:2.5%;
+		background: repeat url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAMAAADXEh96AAAABlBMVEXi4uL////QNzhYAAAAGElEQVR4AWNgBAEGBjAJhEASgiB8hCQjAAKgAB968X12AAAAAElFTkSuQmCC");
+	}
+	.pro_main .pro_img:after{
+		content: '\20';
+     display: block;
+     width: 36px;
+     height: 36px;
+     position: absolute;
+     right: 0;
+     bottom: 0;
+     background: no-repeat url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAAAIVBMVEX////////39/j29fb08/Xz8fPv7vDs6+3r6ezp5+rl5ObBgIjfAAAAeUlEQVR42u3TMQ7EMAhE0XwIOOz9D7yS1wnVbKp0mWqKZ0sgsXncZ4vPfV70HBoGeP1Fzi8p0DJZVQ4p0YBjloRSyMhuCvX7IDQ6W2IaHavt+ifHLz4UqnN0A72nBIvcATHdUldSoMkiYkycAnWWaiSVRq38Pakn0Bd56C4XXDNLsAAAAABJRU5ErkJggg==");
+
+	}
+	.left_img img{
+		width:100%;
+		height:100%;
+		vertical-align: middle;
+	}
+	.pro_list_box{
+		text-align: center;
+		margin-top:20px;
+	}
+	.pro_list{
+		height:100px;
+		
+	}
+	.pro_list li{
+		display: inline-block;
+		text-align: center;
+	}
+	.pro_list li a{
+		display: inline-block;
+		width:105px;
+		height:105px;
+		margin:0 6px 0 0;
+		line-height: 97px;
+		text-align: center;
+		vertical-align: top;
+		opacity: 0.6;
+		background: #f0f0f0;
+	}
+	.pro_list li a:hover{
+		opacity: 1;
+	}
+	.pro_list li img{
+		max-width: 82px;
+		max-height:82px;
+		vertical-align: middle;
+	}
+	
+  .zoomContainer {
+    z-index: 999;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+    <div class="main pw1200">
+    	<div class="pro_detail clearfix">
+			<div class="left_img">
+				<div class="pro_main">
+					<a class="pro_img" href="images/s_w800h800.jpeg" title="">
+						<img id="zoom" class="pro_detail_img" src="images/s_w800h800.jpeg" alt="" data-zoom-image="images/s_w800h800.jpeg">
+					</a>
+					<!-- <a class="pro_img" href="images/s.jpeg" title="">
+						<img class="pro_detail_img" src="images/s.jpeg" alt="">
+					</a> -->
+				</div>
+				<div class="pro_list_box">
+					<ul class="pro_list" id="pro_list">
+						<li><a href="#" title="" data-image="images/s_w800h800.jpeg" data-zoom-image="images/s_w800h800.jpeg"><img src="images/s_w800h800.jpeg" alt=""></a></li>
+						<li><a href="#" title="" data-image="images/s.jpeg" data-zoom-image="images/s.jpeg"><img src="images/s.jpeg" alt=""></a></li>
+					</ul>
+				</div>
+				
+			</div>
+			<div class="right_intr">
+				
+			</div>
+		</div>
+    </div>
+    <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="img.js"></script>
+    <script type="text/javascript">
+		$('.pro_img').each(function(index,el){
+			var _el = $(el);
+			var imgSrc = _el.attr('href');
+			// var newItem = $(`<li><a data-image="images/s_w800h800.jpeg" data-zoom-image="images/s_w800h800.jpeg" href="javascript:void(0);" title=""><img src="images/s_w800h800.jpeg" alt="" ></a></li>`);
+			// 鼠标移入点击切换图片
+			// var newItem = $('#pro_list li');
+			// newItem.on('mouseenter click',function(e){
+			// 	$('.pro_img').css('display','none');
+			// 	_el.css('display','block');
+			// 	e.preventDefault();
+			// })
+			// $('.pro_list').append(newItem);
+		});
+		// 判断橱窗图片的高度
+		$(document).ready(function() {
+			$('.pro_detail_img').each(function(){
+				// console.log($(this).width())
+				// console.log($(this).height())
+				if($(this).width() == $(this).height()){
+					$(this).css('width','100%');
+				}
+			})
+		});
+		// 鼠标放大镜
+
+        $("#zoom").elevateZoom({
+            gallery: 'pro_list', //缩略图id
+            // lensColour: '#fede4f',//放大镜背景颜色
+            // cursor: 'move',//悬浮在放大镜鼠标形状
+            // borderSize: '1',//右侧放大镜边框尺寸
+            // borderColour: '#dddddd' //右侧放大镜边框颜色
+            zoomWindowWidth: 400,
+	        zoomWindowHeight: 400 - 1,
+	        zoomWindowOffetx: 10,
+	        zoomWindowOffety: 0,
+	        // zoomEnabled: true,
+	        borderSize: 1,
+	        borderColour: "#ccc",
+	        lensBorderColour: "#aaa",
+	        cursor: "crosshair",
+	        lensSize:200
+        });
+
+        
+    </script>
+      
+</body>
+</html>

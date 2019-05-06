@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>按钮特效</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<!-- [if lt IE 9]>    //判断当前浏览器的版本是否小于IE 9-->
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<!-- <![endif] -->
+<!-- IE6-8不支持CSS3 Media Queries -->
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+<style type="text/css" media="screen">
+	a{
+		display: inline-block;
+		width: 200px;
+		height: 35px;
+		line-height: 35px;
+		text-align: center;
+		color: #fff;
+		background: #b7a134;
+		padding:9px 38px;
+		border-radius: 3px;
+		-moz-transition: all 0.2s linear;
+	  	-o-transition: all 0.2s linear;
+	  	-webkit-transition: all 0.2s linear;
+	  	transition: all 0.2s linear;
+	  	text-decoration: none;
+	  	position: relative;
+	}
+	a:after{
+		width:0;
+		height: 100%;
+		background: rgba(255, 255, 255, 0.2);
+		content: '';
+		position: absolute;
+		left: -50%;
+		top:0;
+		transform: skew(50deg);
+		transition-duration: 0.6s;
+		transform-origin: top left;
+	}
+	a:hover:after{
+		width:150%;
+	}
+</style>
+</head>
+<body>
+    <div class="main">
+    	<h2>鼠标滑入有镜面效果</h2>
+    	<a href="#">button</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://www.jq22.com/demo/jQueryJpg201708110048/
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>
+		</title>
+		<style>
+			.m{ width: 800px; margin-left: auto; margin-right: auto; margin-top: 100px}
+			* { margin: 0; padding: 0; list-style-type: none; text-decoration: none;
+			font: 16px '微软雅黑'; } /*外层盒子和里边图片的一点点样式*/ .jqueryzoom { position: relative;
+			padding: 0; border: solid 1px #eaeaea; width: 300px; height:300px; overflow:
+			hidden; display: inline-block; } /*放大镜是基于图片大小自动生成的，每次都要把jqueryzoom中img的大小和jqueryzoom盒子大小设置为一样的，不然放大镜滑块有可能溢出*/
+			.jqueryzoom img { width: 300px; } ul li { float: left; margin-right: 5px;
+			} ul li img { width: 100px; height: 100px; } .cloudzoom-gallery-active{opacity:
+			.5}
+		</style>
+		<link href="./www.jq22.com_files/cloudzoom.css" rel="stylesheet">
+		<script src="./www.jq22.com_files/jquery-1.10.2.js.下载">
+		</script>
+		<script src="./www.jq22.com_files/jquery.min.js.下载">
+		</script>
+		<script src="./www.jq22.com_files/cloudzoom.js.下载">
+		</script>
+		<script type="text/javascript">
+			CloudZoom.quickStart();
+		</script>
+	</head>
+	<body style="">
+		<div class="m">
+			<div class="jqueryzoom">
+				<img id="img" class="cloudzoom" src="./www.jq22.com_files/a1.png" data-cloudzoom="zoomSizeMode:&#39;image&#39;,zoomImage: &#39;images/a1.png&#39;,autoInside: 30"
+				alt="呵呵哒" title="">
+			</div>
+			<ul>
+				<li>
+					<img class="cloudzoom-gallery" src="./www.jq22.com_files/a1.png" data-cloudzoom="useZoom:&#39;.cloudzoom&#39;,image:&#39;images/a1.png&#39;,zoomImage:&#39;images/a1.png&#39;">
+				</li>
+				<li>
+					<img class="cloudzoom-gallery" src="./www.jq22.com_files/a2.png" data-cloudzoom="useZoom:&#39;.cloudzoom&#39;,image:&#39;images/a2.png&#39;,zoomImage:&#39;images/a2.png&#39;">
+				</li>
+				<li>
+					<img class="cloudzoom-gallery" src="./www.jq22.com_files/a3.png" data-cloudzoom="useZoom:&#39;.cloudzoom&#39;,image:&#39;images/a3.png&#39;,zoomImage:&#39;images/a3.png&#39;">
+				</li>
+				<li>
+					<img class="cloudzoom-gallery" src="./www.jq22.com_files/a4.png" data-cloudzoom="useZoom:&#39;.cloudzoom&#39;,image:&#39;images/a4.png&#39;,zoomImage:&#39;images/a4.png&#39;">
+				</li>
+			</ul>
+		</div>
+	</body>
+
+</html>
